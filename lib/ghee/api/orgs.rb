@@ -98,9 +98,9 @@ class Ghee
         Proxy.new(connection, prefix, params)
       end
 
-      def memberships(user)
+      def memberships(user, &block)
         prefix = "#{path_prefix}/memberships/#{user}"
-        Proxy.new(connection, prefix, {})
+        Proxy.new(connection, prefix, nil, &block)
       end
     end
   end

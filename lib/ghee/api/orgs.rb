@@ -97,6 +97,11 @@ class Ghee
         prefix = (!name.is_a?(Hash) and name) ? "./orgs/#{name}" : "user/orgs"
         Proxy.new(connection, prefix, params)
       end
+
+      def memberships(user)
+        prefix = "#{path_prefix}/memberships/#{user}"
+        Proxy.new(connection, prefix, {})
+      end
     end
   end
 end

@@ -77,7 +77,7 @@ class Ghee
 
         def memberships(user, &block)
           prefix = "#{path_prefix}/memberships/#{user}"
-          Proxy.new(connection, prefix, nil, block)
+          Proxy.new(connection, prefix, nil, &block)
         end
       end
 
